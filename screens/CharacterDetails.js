@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Button} from 'react-native';
+import Constants from 'expo-constants';
+import styles from './style';
 import {toJS} from 'mobx';
 const CharacterDetails = (props) => {
         console.log("Props", props)
@@ -21,22 +23,10 @@ const CharacterDetails = (props) => {
                   <Text style={styles.text}>{character.homeworld} </Text>
                   <Text style={styles.text}>{character.vehicles} </Text>
                   <Text style={styles.text}>{character.films} </Text>
-                  <Button onPress={() => addToFavList()} style={styles.button} title="Add to favs"></Button>
+                  <Button onPress={() => addToFavList()} color='#E2E21C' title="Add to favs"></Button>
             </View>
         )
     
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-around'
-    },
-    text: {
-        color: 'blue',
-     }, 
-     
-   });
 export default CharacterDetails;

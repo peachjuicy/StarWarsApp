@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, ScrollView,View, Text} from 'react-native';
+import { StyleSheet, View, Text,  ScrollView, ActivityIndicator, TouchableOpacity, Button} from 'react-native';
+import styles from './style';
 import Constants from 'expo-constants';
 import { RootStoreContext } from '../store/RootStoreContext';
 import { observer } from 'mobx-react';
@@ -14,11 +15,13 @@ class FavCharacterList extends React.Component {
         const {characterStore, favCharacterStore} = this.context;
         const { favChars } = favCharacterStore;
         const favCharList = favChars.map((favCharacter) => (
+            <TouchableOpacity key={favCharacter.url}>
               <View style={styles.container} key={favCharacter.url}>
                  <Text style={styles.text} key={favCharacter.url}>{favCharacter.name}</Text>
-                 <Text>Height:{favCharacter.height}</Text>
-                 <Text>Mass:{favCharacter.mass}</Text>
+                 <Text style={styles.text}>Height:{favCharacter.height}</Text>
+                 <Text style={styles.text}>Mass:{favCharacter.mass}</Text>
              </View>
+             </TouchableOpacity>
         ))
         return (
             <View style={styles.container}>
@@ -29,17 +32,5 @@ class FavCharacterList extends React.Component {
         )
     }
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: Constants.statusBarHeight,
-        justifyContent:'space-around'
-    },
-    text: {
-        color: '#fff',
-     }, 
-     scrollView: {
-        backgroundColor: 'pink',
-      },
-   });
+
 export default FavCharacterList;
