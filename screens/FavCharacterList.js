@@ -10,16 +10,16 @@ class FavCharacterList extends React.Component {
     static contextType=RootStoreContext;
     componentDidMount () {
         const {favCharacterStore} = this.context;
+        favCharacterStore.showFavList();
+        
    }
     render(){
         const {characterStore, favCharacterStore} = this.context;
         const { favChars } = favCharacterStore;
-        const favCharList = favChars.map((favCharacter) => (
+            const favCharList = favChars.map((favCharacter) => (
             <TouchableOpacity key={favCharacter.url}>
               <View style={styles.container} key={favCharacter.url}>
                  <Text style={styles.text} key={favCharacter.url}>{favCharacter.name}</Text>
-                 <Text style={styles.text}>Height:{favCharacter.height}</Text>
-                 <Text style={styles.text}>Mass:{favCharacter.mass}</Text>
              </View>
              </TouchableOpacity>
         ))
