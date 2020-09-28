@@ -5,22 +5,21 @@ const styles = StyleSheet.create({
     container: {
    flex: 1,
    marginTop: Constants.statusBarHeight,
-   backgroundColor: '#050201',
-   alignItems: 'center',
+   alignItems: 'stretch',
    justifyContent: 'space-around',
-   borderBottomColor: 'white',
-    borderBottomWidth: 1,
-  
+   backgroundColor: '#050201',
     },
     text: {
        color: 'white'
     }, 
     button: {
-      backgroundColor:'#E2E21C'
+      backgroundColor:'#FFE81F',
+      
     },
     scrollView: {
       backgroundColor: '#050201',
     },
+   
    });
 
    export default styles;

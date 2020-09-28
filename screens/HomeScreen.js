@@ -8,8 +8,8 @@ function HomeScreen ({navigation}){
          return (
              <View  style={styles.container}>
                  <Text style={styles.text}>Welcome to the Star Wars App!</Text>
-                 <Button onPress={() => navigation.navigate('CharacterList')} color='#E2E21C' style={styles.button} title="Character List" ></Button>
-                 <Button onPress={() => navigation.navigate('FavCharacterList')} color='#E2E21C' style={styles.button}   title="Favorites List" ></Button>
+                 <Button onPress={() => navigation.navigate('CharacterList')} color='#FFE81F' title="Character List" ></Button>
+                 <Button onPress={() => navigation.navigate('FavCharacterList')} color='#FFE81F'    title="Favorites List" ></Button>
 
              </View>
          );
